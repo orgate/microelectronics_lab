@@ -1,0 +1,16 @@
+# Output products list for <inst_memory>
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt
+inst_memory.asy
+inst_memory.gise
+inst_memory.mif
+inst_memory.ngc
+inst_memory.v
+inst_memory.veo
+inst_memory.vhd
+inst_memory.vho
+inst_memory.xco
+inst_memory.xise
+inst_memory_flist.txt
+inst_memory_xmdf.tcl

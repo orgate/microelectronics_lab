@@ -1,0 +1,262 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.5 " "(v0_9_5)";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x8b19408 .scope module, "booth_tb" "booth_tb" 2 11;
+ .timescale -9 -9;
+v0x8b36328_0 .var "a", 7 0;
+v0x8b36388_0 .var "b", 7 0;
+v0x8b363f8_0 .net "p", 15 0, v0x8b360f0_0; 1 drivers
+S_0x8b08120 .scope module, "dut" "booth_mult" 2 16, 3 25, S_0x8b19408;
+ .timescale -9 -9;
+v0x8b081a0_0 .net "a", 7 0, v0x8b36328_0; 1 drivers
+v0x8b35ee8_0 .net "b", 7 0, v0x8b36388_0; 1 drivers
+v0x8b35f48_0 .net "clk", 0 0, C4<z>; 0 drivers
+v0x8b35fa8_0 .var "ctr", 4 0;
+v0x8b36010_0 .var "multiplicand", 7 0;
+v0x8b36070_0 .var "multiplier", 7 0;
+v0x8b360f0_0 .var "p", 15 0;
+v0x8b36150_0 .var "rdy", 0 0;
+v0x8b361d8_0 .net "reset", 0 0, C4<z>; 0 drivers
+v0x8b36238_0 .var "temp", 15 0;
+v0x8b362c8_0 .var "temp1", 2 0;
+E_0x8b174e8 .event edge, v0x8b36238_0;
+    .scope S_0x8b08120;
+T_0 ;
+    %wait E_0x8b174e8;
+    %load/v 8, v0x8b35ee8_0, 8;
+    %mov 16, 0, 8;
+    %ix/load 0, 16, 0;
+    %assign/v0 v0x8b36238_0, 0, 8;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x8b08120;
+T_1 ;
+    %cassign/v v0x8b36150_0, 0, 1;
+    %cassign/v v0x8b360f0_0, 0, 16;
+    %movi 8, 1, 5;
+    %cassign/v v0x8b35fa8_0, 8, 5;
+    %load/v 13, v0x8b081a0_0, 8;
+    %ix/load 1, 7, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.0, 4;
+    %load/x1p 37, v0x8b081a0_0, 1;
+    %jmp T_1.1;
+T_1.0 ;
+    %mov 37, 2, 1;
+T_1.1 ;
+    %mov 29, 37, 1; Move signal select into place
+    %mov 36, 29, 1; Repetition 8
+    %mov 35, 29, 1; Repetition 7
+    %mov 34, 29, 1; Repetition 6
+    %mov 33, 29, 1; Repetition 5
+    %mov 32, 29, 1; Repetition 4
+    %mov 31, 29, 1; Repetition 3
+    %mov 30, 29, 1; Repetition 2
+    %mov 21, 29, 8;
+    %cassign/v v0x8b36070_0, 13, 8;
+    %load/v 29, v0x8b35ee8_0, 8;
+    %ix/load 1, 7, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.2, 4;
+    %load/x1p 53, v0x8b35ee8_0, 1;
+    %jmp T_1.3;
+T_1.2 ;
+    %mov 53, 2, 1;
+T_1.3 ;
+    %mov 45, 53, 1; Move signal select into place
+    %mov 52, 45, 1; Repetition 8
+    %mov 51, 45, 1; Repetition 7
+    %mov 50, 45, 1; Repetition 6
+    %mov 49, 45, 1; Repetition 5
+    %mov 48, 45, 1; Repetition 4
+    %mov 47, 45, 1; Repetition 3
+    %mov 46, 45, 1; Repetition 2
+    %mov 37, 45, 8;
+    %cassign/v v0x8b36010_0, 29, 8;
+    %ix/load 1, 1, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.4, 4;
+    %load/x1p 48, v0x8b35ee8_0, 1;
+    %jmp T_1.5;
+T_1.4 ;
+    %mov 48, 2, 1;
+T_1.5 ;
+    %mov 45, 48, 1; Move signal select into place
+    %mov 46, 0, 2;
+    %cassign/v v0x8b362c8_0, 45, 3;
+T_1.6 ;
+    %load/v 48, v0x8b35fa8_0, 5;
+    %mov 53, 0, 1;
+   %cmpi/u 48, 4, 6;
+    %jmp/0xz T_1.7, 5;
+    %load/v 48, v0x8b360f0_0, 16;
+    %mov 64, 0, 16;
+    %addi 48, 1, 32;
+    %cassign/v v0x8b360f0_0, 48, 16;
+    %load/v 80, v0x8b362c8_0, 3;
+    %cmpi/u 80, 0, 3;
+    %jmp/0xz  T_1.8, 4;
+    %movi 80, 1, 16;
+    %cassign/v v0x8b360f0_0, 80, 16;
+T_1.8 ;
+    %load/v 96, v0x8b362c8_0, 3;
+    %cmpi/u 96, 1, 3;
+    %jmp/0xz  T_1.10, 4;
+    %movi 96, 2, 16;
+    %cassign/v v0x8b360f0_0, 96, 16;
+T_1.10 ;
+    %load/v 112, v0x8b362c8_0, 3;
+    %cmpi/u 112, 2, 3;
+    %jmp/0xz  T_1.12, 4;
+    %movi 112, 3, 16;
+    %cassign/v v0x8b360f0_0, 112, 16;
+T_1.12 ;
+    %load/v 128, v0x8b362c8_0, 3;
+    %cmpi/u 128, 3, 3;
+    %jmp/0xz  T_1.14, 4;
+    %movi 128, 4, 16;
+    %cassign/v v0x8b360f0_0, 128, 16;
+T_1.14 ;
+    %load/v 144, v0x8b362c8_0, 3;
+    %cmpi/u 144, 4, 3;
+    %jmp/0xz  T_1.16, 4;
+    %movi 144, 5, 16;
+    %cassign/v v0x8b360f0_0, 144, 16;
+T_1.16 ;
+    %load/v 160, v0x8b362c8_0, 3;
+    %cmpi/u 160, 5, 3;
+    %jmp/0xz  T_1.18, 4;
+    %movi 160, 6, 16;
+    %cassign/v v0x8b360f0_0, 160, 16;
+T_1.18 ;
+    %load/v 176, v0x8b362c8_0, 3;
+    %cmpi/u 176, 6, 3;
+    %jmp/0xz  T_1.20, 4;
+    %movi 176, 7, 16;
+    %cassign/v v0x8b360f0_0, 176, 16;
+T_1.20 ;
+    %load/v 192, v0x8b362c8_0, 3;
+    %cmpi/u 192, 7, 3;
+    %jmp/0xz  T_1.22, 4;
+    %movi 192, 8, 16;
+    %cassign/v v0x8b360f0_0, 192, 16;
+T_1.22 ;
+    %load/v 208, v0x8b362c8_0, 3;
+    %cmpi/u 208, 1, 3;
+    %jmp/0xz  T_1.24, 4;
+    %movi 208, 9, 16;
+    %cassign/v v0x8b360f0_0, 208, 16;
+T_1.24 ;
+    %ix/getv 1, v0x8b35fa8_0;
+    %jmp/1 T_1.26, 4;
+    %load/x1p 227, v0x8b35ee8_0, 1;
+    %jmp T_1.27;
+T_1.26 ;
+    %mov 227, 2, 1;
+T_1.27 ;
+    %mov 224, 227, 1; Move signal select into place
+    %mov 225, 0, 2;
+    %cmpi/u 224, 1, 3;
+    %jmp/0xz  T_1.28, 4;
+    %movi 224, 5, 16;
+    %cassign/v v0x8b360f0_0, 224, 16;
+T_1.28 ;
+    %load/v 240, v0x8b35fa8_0, 5;
+    %mov 245, 0, 27;
+    %addi 240, 1, 32;
+    %cassign/v v0x8b35fa8_0, 240, 5;
+    %jmp T_1.6;
+T_1.7 ;
+    %load/v 272, v0x8b35ee8_0, 2; Only need 2 of 8 bits
+; Save base=272 wid=2 in lookaside.
+    %cmpi/u 272, 0, 2;
+    %jmp/1 T_1.30, 6;
+    %cmpi/u 272, 1, 2;
+    %jmp/1 T_1.31, 6;
+    %cmpi/u 272, 2, 2;
+    %jmp/1 T_1.32, 6;
+    %cmpi/u 272, 3, 2;
+    %jmp/1 T_1.33, 6;
+    %jmp T_1.34;
+T_1.30 ;
+    %load/v 272, v0x8b360f0_0, 16;
+    %cassign/v v0x8b360f0_0, 272, 16;
+    %cassign/link v0x8b360f0_0, v0x8b360f0_0;
+    %jmp T_1.34;
+T_1.31 ;
+    %load/v 288, v0x8b360f0_0, 16;
+    %load/v 304, v0x8b081a0_0, 8;
+    %mov 312, 0, 8;
+    %add 288, 304, 16;
+    %cassign/v v0x8b360f0_0, 288, 16;
+    %jmp T_1.34;
+T_1.32 ;
+    %load/v 304, v0x8b360f0_0, 16;
+    %load/v 320, v0x8b081a0_0, 8;
+    %mov 328, 0, 8;
+    %sub 304, 320, 16;
+    %ix/load 0, 1, 0;
+    %mov 4, 0, 1;
+    %shiftl/i0  304, 16;
+    %cassign/v v0x8b360f0_0, 304, 16;
+    %jmp T_1.34;
+T_1.33 ;
+    %load/v 320, v0x8b360f0_0, 16;
+    %load/v 336, v0x8b081a0_0, 8;
+    %mov 344, 0, 8;
+    %sub 320, 336, 16;
+    %cassign/v v0x8b360f0_0, 320, 16;
+    %jmp T_1.34;
+T_1.34 ;
+    %cassign/v v0x8b36150_0, 1, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x8b19408;
+T_2 ;
+    %delay 5, 0;
+    %movi 336, 2, 8;
+    %set/v v0x8b36328_0, 336, 8;
+    %movi 336, 3, 8;
+    %set/v v0x8b36388_0, 336, 8;
+    %delay 5, 0;
+    %vpi_call 2 25 "$display", "a = %d, b = %d, a*b = %d", v0x8b36328_0, v0x8b36388_0, v0x8b363f8_0;
+    %delay 5, 0;
+    %movi 336, 12, 8;
+    %set/v v0x8b36328_0, 336, 8;
+    %movi 336, 20, 8;
+    %set/v v0x8b36388_0, 336, 8;
+    %delay 5, 0;
+    %vpi_call 2 30 "$display", "a = %d, b = %d, a*b = %d", v0x8b36328_0, v0x8b36388_0, v0x8b363f8_0;
+    %delay 5, 0;
+    %movi 336, 123, 8;
+    %set/v v0x8b36328_0, 336, 8;
+    %movi 336, 19, 8;
+    %set/v v0x8b36388_0, 336, 8;
+    %delay 5, 0;
+    %vpi_call 2 34 "$display", "a = %d, b = %d, a*b = %d", v0x8b36328_0, v0x8b36388_0, v0x8b363f8_0;
+    %delay 5, 0;
+    %movi 336, 88, 8;
+    %set/v v0x8b36328_0, 336, 8;
+    %movi 336, 20, 8;
+    %set/v v0x8b36388_0, 336, 8;
+    %delay 5, 0;
+    %vpi_call 2 40 "$display", "a = %d, b = %d, a*b = %d", v0x8b36328_0, v0x8b36388_0, v0x8b363f8_0;
+    %delay 5, 0;
+    %movi 336, 145, 8;
+    %set/v v0x8b36328_0, 336, 8;
+    %movi 344, 251, 8;
+    %set/v v0x8b36388_0, 344, 8;
+    %delay 5, 0;
+    %vpi_call 2 45 "$display", "a = %d, b = %d, a*b = %d", v0x8b36328_0, v0x8b36388_0, v0x8b363f8_0;
+    %vpi_call 2 47 "$stop";
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "booth_mult_tb.v";
+    "booth_mult_part.v";

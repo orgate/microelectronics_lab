@@ -1,0 +1,15 @@
+# Output products list for <dmem>
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt
+dmem.asy
+dmem.gise
+dmem.ngc
+dmem.v
+dmem.veo
+dmem.vhd
+dmem.vho
+dmem.xco
+dmem.xise
+dmem_flist.txt
+dmem_xmdf.tcl

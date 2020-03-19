@@ -1,0 +1,38 @@
+Release 12.2 - xst M.63c (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/1-2/VLSI-Lab/Xilinx/processor/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to D:/1-2/VLSI-Lab/Xilinx/processor/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLCompilers:176 - Include directory \Users\PSEUDO\Desktop\micro_final\ does not exist
+Compiling verilog file "C:/Users/PSEUDO/Desktop/micro_final/reg_file.v" in library work
+Module <reg_file> compiled
+No errors in compilation
+Analysis of file <"reg_file.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.56 secs
+ 
+--> 
+
+Total memory usage is 202348 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

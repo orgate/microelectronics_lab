@@ -1,0 +1,12 @@
+Release 12.2 Drc M.63c (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Mon Apr 21 18:25:19 2014
+
+drc -z micro.ncd micro.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net c1/re1/CONTROL1<13> is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

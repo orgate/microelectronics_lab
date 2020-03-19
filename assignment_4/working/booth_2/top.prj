@@ -1,0 +1,4 @@
+verilog work "ipcore_dir/vio.v"
+verilog work "ipcore_dir/icon.v"
+verilog work "../../Ajay/assignments/assignment_2/working codes/booth_mult.v"
+verilog work "../../Ajay/assignments/assignment_4/top.v"

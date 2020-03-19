@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\1-2\VLSI-Lab\Xilinx\processor\micro.ncd
+OUTFILE=D:\1-2\VLSI-Lab\Xilinx\processor\micro.bit
+FAMILY=Virtex5
+PART=xc5vlx110t-1ff1136
+WORKINGDIR=D:\1-2\VLSI-Lab\Xilinx\processor
+LICENSE=ISE
+USER_INFO=0_0_0

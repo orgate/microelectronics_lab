@@ -1,0 +1,2 @@
+SETPROJECT "D:/1-2/VLSI-Lab/Xilinx/processor/ipcore_dir/coregen.cgp"
+LAUNCHXCO "D:/1-2/VLSI-Lab/Xilinx/processor/ipcore_dir/ila.xco"

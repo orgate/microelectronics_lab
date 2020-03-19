@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="processor.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_RESPONSE" xil_pn:name="ipcore_dir/coregen.rsp"/>
+    <file xil_pn:fileType="FILE_ASY" xil_pn:name="ipcore_dir/dmem.asy" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ipcore_dir/dmem.ngc" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/dmem.v" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VEO" xil_pn:name="ipcore_dir/dmem.veo" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/dmem.vhd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/dmem.vho" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_ASY" xil_pn:name="ipcore_dir/icon.asy" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ipcore_dir/icon.ngc" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/icon.v" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VEO" xil_pn:name="ipcore_dir/icon.veo" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/icon.vhd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/icon.vho" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_ASY" xil_pn:name="ipcore_dir/ila.asy" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ipcore_dir/ila.ngc" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ila.v" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VEO" xil_pn:name="ipcore_dir/ila.veo" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/ila.vhd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/ila.vho" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="micro_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1398678777" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1398678777">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398678823" xil_pn:in_ck="-1667474394517981743" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1398678823">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="alu.v"/>
+      <outfile xil_pn:name="control_unit.v"/>
+      <outfile xil_pn:name="inst_memory.v"/>
+      <outfile xil_pn:name="micro.v"/>
+      <outfile xil_pn:name="micro_tb.v"/>
+      <outfile xil_pn:name="program_counter.v"/>
+      <outfile xil_pn:name="reg_file.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398678828" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4415425708384038406" xil_pn:start_ts="1398678827">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398678828" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4048951966001834956" xil_pn:start_ts="1398678828">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398678828" xil_pn:in_ck="-5328539270543250249" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1813255745158956070" xil_pn:start_ts="1398678828">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/dmem.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/dmem.v"/>
+      <outfile xil_pn:name="ipcore_dir/icon.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/icon.v"/>
+      <outfile xil_pn:name="ipcore_dir/ila.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/ila.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398678828" xil_pn:in_ck="8574360528963577004" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1398678828">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="alu.v"/>
+      <outfile xil_pn:name="control_unit.v"/>
+      <outfile xil_pn:name="inst_memory.v"/>
+      <outfile xil_pn:name="ipcore_dir/dmem.v"/>
+      <outfile xil_pn:name="ipcore_dir/icon.v"/>
+      <outfile xil_pn:name="ipcore_dir/ila.v"/>
+      <outfile xil_pn:name="micro.v"/>
+      <outfile xil_pn:name="micro_tb.v"/>
+      <outfile xil_pn:name="program_counter.v"/>
+      <outfile xil_pn:name="reg_file.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398678832" xil_pn:in_ck="8574360528963577004" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6423444712936669421" xil_pn:start_ts="1398678828">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
+
+</generated_project>

@@ -1,0 +1,552 @@
+Release 12.4 - xst M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.31 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.31 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-1-ff1136
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ipcore_dir/vio.v" in library work
+Compiling verilog file "ipcore_dir/icon.v" in library work
+Module <vio> compiled
+Compiling verilog file "../../Ajay/assignments/assignment_2/working codes/booth_mult.v" in library work
+Module <icon> compiled
+Module <booth_encoder> compiled
+Compiling verilog file "../../Ajay/assignments/assignment_4/top.v" in library work
+Module <booth_mult> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <booth_mult> in library <work>.
+
+Analyzing hierarchy for module <booth_encoder> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+WARNING:Xst:2211 - "ipcore_dir/icon.v" line 35: Instantiating black box module <icon>.
+WARNING:Xst:2211 - "ipcore_dir/vio.v" line 39: Instantiating black box module <vio>.
+Module <top> is correct for synthesis.
+ 
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <icon1> in unit <top>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <icon1> in unit <top>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <vio1> in unit <top>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <vio1> in unit <top>.
+Analyzing module <booth_mult> in library <work>.
+Module <booth_mult> is correct for synthesis.
+ 
+Analyzing module <booth_encoder> in library <work>.
+Module <booth_encoder> is correct for synthesis.
+ 
+    Set property "SYN_NOPRUNE = 1" for unit <icon>.
+    Set property "SYN_NOPRUNE = 1" for unit <vio>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <booth_encoder>.
+    Related source file is "../../Ajay/assignments/assignment_2/working codes/booth_mult.v".
+WARNING:Xst:646 - Signal <A_extended> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit 8-to-1 multiplexer for signal <PP>.
+    Found 16-bit adder for signal <PP$sub0001> created at line 20.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 Multiplexer(s).
+Unit <booth_encoder> synthesized.
+
+
+Synthesizing Unit <booth_mult>.
+    Related source file is "../../Ajay/assignments/assignment_2/working codes/booth_mult.v".
+WARNING:Xst:646 - Signal <PP4<15:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <PP3<15:12>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <PP2<15:14>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit adder for signal <pa>.
+    Found 16-bit adder for signal <pa$addsub0000> created at line 40.
+    Found 16-bit adder for signal <pa$addsub0001> created at line 40.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+Unit <booth_mult> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "../../Ajay/assignments/assignment_4/top.v".
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 7
+ 16-bit adder                                          : 7
+# Multiplexers                                         : 4
+ 16-bit 8-to-1 multiplexer                             : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/icon.ngc>.
+Reading core <ipcore_dir/vio.ngc>.
+Loading core <icon> for timing and area information for instance <icon1>.
+Loading core <vio> for timing and area information for instance <vio1>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 7
+ 16-bit adder                                          : 7
+# Multiplexers                                         : 4
+ 16-bit 8-to-1 multiplexer                             : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <top> ...
+
+Optimizing unit <booth_encoder> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 16
+
+Cell Usage :
+# BELS                             : 397
+#      GND                         : 3
+#      INV                         : 22
+#      LUT1                        : 14
+#      LUT2                        : 17
+#      LUT3                        : 61
+#      LUT4                        : 92
+#      LUT5                        : 11
+#      LUT6                        : 91
+#      MUXCY                       : 21
+#      MUXCY_L                     : 12
+#      MUXF5                       : 2
+#      MUXF6                       : 1
+#      MUXF7                       : 11
+#      VCC                         : 2
+#      XORCY                       : 37
+# FlipFlops/Latches                : 201
+#      FDC                         : 1
+#      FDCE                        : 42
+#      FDE                         : 119
+#      FDR                         : 8
+#      FDRE                        : 31
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 16
+#      OBUF                        : 16
+# Others                           : 3
+#      BSCAN_VIRTEX5               : 1
+#      TIMESPEC                    : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             201  out of  69120     0%  
+ Number of Slice LUTs:                  308  out of  69120     0%  
+    Number used as Logic:               308  out of  69120     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    444
+   Number with an unused Flip Flop:     243  out of    444    54%  
+   Number with an unused LUT:           136  out of    444    30%  
+   Number of fully used LUT-FF pairs:    65  out of    444    14%  
+   Number of unique control sets:        59
+
+IO Utilization: 
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    640     2%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------+---------------------------------------------------------------+-------+
+Clock Signal                                        | Clock buffer(FF name)                                         | Load  |
+----------------------------------------------------+---------------------------------------------------------------+-------+
+icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL        | BUFG                                                          | 168   |
+icon1/U0/iUPDATE_OUT                                | NONE(icon1/U0/U_ICON/U_iDATA_CMD)                             | 1     |
+dut/PP1<0>(dut/booth1/PP<0>1:O)                     | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/U_RISING) | 2     |
+dut/PP1<1>(dut/booth1/PP<1>1:O)                     | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[1].ASYNC_IN_CELL/U_RISING) | 2     |
+dut/Madd_pa_addsub0001R(dut/Madd_pa_addsub0001R1:O) | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[2].ASYNC_IN_CELL/U_RISING) | 2     |
+product_3_OBUF(dut/Madd_pa_addsub0001_Madd_xor<3>:O)| NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[3].ASYNC_IN_CELL/U_RISING) | 2     |
+product_4_OBUF(dut/Madd_pa_addsub0001_Madd_xor<4>:O)| NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[4].ASYNC_IN_CELL/U_RISING) | 2     |
+product_5_OBUF(dut/Madd_pa_addsub0001_Madd_xor<5>:O)| NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[5].ASYNC_IN_CELL/U_RISING) | 2     |
+product_6_OBUF(dut/Madd_pa_xor<6>:O)                | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[6].ASYNC_IN_CELL/U_RISING) | 2     |
+product_7_OBUF(dut/Madd_pa_xor<7>:O)                | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[7].ASYNC_IN_CELL/U_RISING) | 2     |
+product_8_OBUF(dut/Madd_pa_xor<8>:O)                | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[8].ASYNC_IN_CELL/U_RISING) | 2     |
+product_9_OBUF(dut/Madd_pa_xor<9>:O)                | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[9].ASYNC_IN_CELL/U_RISING) | 2     |
+product_10_OBUF(dut/Madd_pa_xor<10>:O)              | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[10].ASYNC_IN_CELL/U_RISING)| 2     |
+product_11_OBUF(dut/Madd_pa_xor<11>:O)              | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[11].ASYNC_IN_CELL/U_RISING)| 2     |
+product_12_OBUF(dut/Madd_pa_xor<12>:O)              | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[12].ASYNC_IN_CELL/U_RISING)| 2     |
+product_13_OBUF(dut/Madd_pa_xor<13>:O)              | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[13].ASYNC_IN_CELL/U_RISING)| 2     |
+product_14_OBUF(dut/Madd_pa_xor<14>:O)              | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[14].ASYNC_IN_CELL/U_RISING)| 2     |
+product_15_OBUF(dut/Madd_pa_xor<15>:O)              | NONE(*)(vio1/U0/I_VIO/GEN_ASYNC_IN[15].ASYNC_IN_CELL/U_RISING)| 2     |
+----------------------------------------------------+---------------------------------------------------------------+-------+
+(*) These 16 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------------------------------+------------------------------------------------------------+-------+
+Control Signal                                                | Buffer(FF name)                                            | Load  |
+--------------------------------------------------------------+------------------------------------------------------------+-------+
+vio1/U0/I_VIO/RESET(vio1/U0/I_VIO/reset_f_edge/I_H2L.U_DOUT:Q)| NONE(vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/U_FALLING)| 32    |
+icon1/U0/U_ICON/U_CMD/iSEL_n(icon1/U0/U_ICON/U_CMD/U_SEL_n:O) | NONE(icon1/U0/U_ICON/U_CMD/G_TARGET[10].I_NE0.U_TARGET)    | 10    |
+icon1/U0/U_ICON/iSEL_n(icon1/U0/U_ICON/U_iSEL_n:O)            | NONE(icon1/U0/U_ICON/U_iDATA_CMD)                          | 1     |
+--------------------------------------------------------------+------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 8.075ns (Maximum Frequency: 123.843MHz)
+   Minimum input arrival time before clock: 0.336ns
+   Maximum output required time after clock: 10.059ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+Timing constraint: TS_J_CLK = PERIOD TIMEGRP "J_CLK" 30 nS HIGH 15 nS
+  Clock period: 8.075ns (frequency: 123.843MHz)
+  Total number of paths / destination ports: 80744 / 262
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  21.943ns
+  Source:               vio1/U0/I_VIO/GEN_ASYNC_OUT[12].ASYNC_OUT_CELL/USER_REG (FF)
+  Destination:          vio1/U0/I_VIO/GEN_ASYNC_IN[15].ASYNC_IN_CELL/S_USER_REG (FF)
+  Data Path Delay:      8.075ns (Levels of Logic = 18)
+  Source Clock:         icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising at 0.000ns
+  Destination Clock:    icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising at 30.000ns
+
+  Data Path: vio1/U0/I_VIO/GEN_ASYNC_OUT[12].ASYNC_OUT_CELL/USER_REG (FF) to vio1/U0/I_VIO/GEN_ASYNC_IN[15].ASYNC_IN_CELL/S_USER_REG (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             29   0.471   0.916  U0/I_VIO/GEN_ASYNC_OUT[12].ASYNC_OUT_CELL/USER_REG (ASYNC_OUT<12>)
+     end scope: 'vio1'
+     LUT4:I0->O           12   0.094   0.636  dut/booth4/PP<4>41 (dut/booth1/PP<4>_bdd7)
+     LUT6:I4->O            1   0.094   0.973  dut/booth2/PP<4>_SW2 (N84)
+     LUT6:I1->O            3   0.094   1.080  dut/booth2/PP<4> (dut/PP2<4>)
+     LUT6:I0->O            1   0.094   0.000  dut/Madd_pa_addsub0001_Madd_lut<6> (dut/Madd_pa_addsub0001_Madd_lut<6>)
+     MUXCY:S->O            1   0.372   0.000  dut/Madd_pa_addsub0001_Madd_cy<6> (dut/Madd_pa_addsub0001_Madd_cy<6>)
+     XORCY:CI->O           1   0.357   1.069  dut/Madd_pa_addsub0001_Madd_xor<7> (dut/pa_addsub0001<7>)
+     LUT6:I0->O            1   0.094   0.000  dut/Madd_pa_lut<7> (dut/Madd_pa_lut<7>)
+     MUXCY:S->O            1   0.372   0.000  dut/Madd_pa_cy<7> (dut/Madd_pa_cy<7>)
+     MUXCY:CI->O           1   0.026   0.000  dut/Madd_pa_cy<8> (dut/Madd_pa_cy<8>)
+     MUXCY:CI->O           1   0.026   0.000  dut/Madd_pa_cy<9> (dut/Madd_pa_cy<9>)
+     MUXCY:CI->O           1   0.026   0.000  dut/Madd_pa_cy<10> (dut/Madd_pa_cy<10>)
+     MUXCY:CI->O           1   0.026   0.000  dut/Madd_pa_cy<11> (dut/Madd_pa_cy<11>)
+     MUXCY:CI->O           1   0.026   0.000  dut/Madd_pa_cy<12> (dut/Madd_pa_cy<12>)
+     MUXCY:CI->O           1   0.026   0.000  dut/Madd_pa_cy<13> (dut/Madd_pa_cy<13>)
+     MUXCY:CI->O           0   0.026   0.000  dut/Madd_pa_cy<14> (dut/Madd_pa_cy<14>)
+     XORCY:CI->O           4   0.357   0.726  dut/Madd_pa_xor<15> (product_15_OBUF)
+     begin scope: 'vio1'
+     LUT3:I0->O            1   0.094   0.000  U0/I_VIO/GEN_ASYNC_IN[15].ASYNC_IN_CELL/USER_MUX (U0/I_VIO/GEN_ASYNC_IN[15].ASYNC_IN_CELL/mux1_out)
+     FDE:D                    -0.018          U0/I_VIO/GEN_ASYNC_IN[15].ASYNC_IN_CELL/S_USER_REG
+    ----------------------------------------
+    Total                      8.075ns (2.675ns logic, 5.400ns route)
+                                       (33.1% logic, 66.9% route)
+
+=========================================================================
+Timing constraint: TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" TO TIMEGRP "J_CLK" 15 nS
+  Clock period: 2.003ns (frequency: 499.251MHz)
+  Total number of paths / destination ports: 18 / 18
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  12.997ns
+  Source:               icon1/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:          icon1/U0/U_ICON/U_SYNC/G_SYNC_WORD[6].I_EQ0.U_FDR (FF)
+  Data Path Delay:      2.003ns (Levels of Logic = 1)
+  Source Clock:         icon1/U0/iUPDATE_OUT rising at 0.000ns
+  Destination Clock:    icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising at 15.000ns
+
+  Data Path: icon1/U0/U_ICON/U_iDATA_CMD (FF) to icon1/U0/U_ICON/U_SYNC/G_SYNC_WORD[6].I_EQ0.U_FDR (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.471   0.347  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              8   0.238   0.374  U0/U_ICON/U_SYNC/U_iDATA_CMD_n (U0/U_ICON/U_SYNC/iDATA_CMD_n)
+     FDR:R                     0.573          U0/U_ICON/U_SYNC/G_SYNC_WORD[6].I_EQ0.U_FDR
+    ----------------------------------------
+    Total                      2.003ns (1.282ns logic, 0.721ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" TO TIMEGRP "U_CLK" 15 nS
+  Clock period: 1.392ns (frequency: 718.391MHz)
+  Total number of paths / destination ports: 1 / 1
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  13.626ns
+  Source:               icon1/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:          icon1/U0/U_ICON/U_iDATA_CMD (FF)
+  Data Path Delay:      1.392ns (Levels of Logic = 1)
+  Source Clock:         icon1/U0/iUPDATE_OUT rising at 0.000ns
+  Destination Clock:    icon1/U0/iUPDATE_OUT rising at 15.000ns
+
+  Data Path: icon1/U0/U_ICON/U_iDATA_CMD (FF) to icon1/U0/U_ICON/U_iDATA_CMD (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.471   0.347  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              1   0.238   0.336  U0/U_ICON/U_iDATA_CMD_n (U0/U_ICON/iDATA_CMD_n)
+     FDC:D                    -0.018          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.392ns (0.709ns logic, 0.683ns route)
+                                       (50.9% logic, 49.1% route)
+
+=========================================================================
+Timing constraint: TS_J_TO_D = FROM TIMEGRP "J_CLK" TO TIMEGRP "D_CLK" TIG;
+  Clock period: 2.956ns (frequency: 338.316MHz)
+  Total number of paths / destination ports: 13 / 1
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Delay:                  2.938ns
+  Source:               icon1/U0/U_ICON/U_CMD/G_TARGET[8].I_NE0.U_TARGET (FF)
+  Destination:          vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/S_USER_REG (FF)
+  Data Path Delay:      2.956ns (Levels of Logic = 4)
+  Source Clock:         icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising at 0.000ns
+  Destination Clock:    icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising at 0.000ns
+
+  Data Path: icon1/U0/U_ICON/U_CMD/G_TARGET[8].I_NE0.U_TARGET (FF) to vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/S_USER_REG (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            17   0.471   0.877  U0/U_ICON/U_CMD/G_TARGET[8].I_NE0.U_TARGET (U0/U_ICON/U_CMD/iTARGET<8>)
+     LUT4:I0->O            2   0.094   0.715  U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[3].U_LUT (U0/U_ICON/iCOMMAND_SEL<3>)
+     LUT4:I1->O           51   0.094   0.611  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[3].U_LCE (CONTROL0<7>)
+     end scope: 'icon1'
+     begin scope: 'vio1'
+     LUT3:I2->O            1   0.094   0.000  U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/USER_MUX (U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/mux1_out)
+     FDE:D                    -0.018          U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/S_USER_REG
+    ----------------------------------------
+    Total                      2.956ns (0.753ns logic, 2.203ns route)
+                                       (25.5% logic, 74.5% route)
+
+=========================================================================
+Timing constraint: TS_D_TO_J = FROM TIMEGRP "D_CLK" TO TIMEGRP "J_CLK" TIG;
+  Clock period: 1.275ns (frequency: 784.314MHz)
+  Total number of paths / destination ports: 2 / 2
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Delay:                  1.257ns
+  Source:               vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/U_RISING (FF)
+  Destination:          vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/S_ASYNC_R_REG (FF)
+  Data Path Delay:      1.275ns (Levels of Logic = 1)
+  Source Clock:         dut/PP1<0> rising at 0.000ns
+  Destination Clock:    icon1/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising at 0.000ns
+
+  Data Path: vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/U_RISING (FF) to vio1/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/S_ASYNC_R_REG (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.471   0.710  U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/U_RISING (U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/rising_out)
+     LUT3:I0->O            1   0.094   0.000  U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/ASYNC_R_MUX (U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/async_mux_r_out)
+     FDE:D                    -0.018          U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/S_ASYNC_R_REG
+    ----------------------------------------
+    Total                      1.275ns (0.565ns logic, 0.710ns route)
+                                       (44.3% logic, 55.7% route)
+
+=========================================================================
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to icon1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to icon1.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to vio1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to vio1.
+
+
+Total REAL time to Xst completion: 107.00 secs
+Total CPU time to Xst completion: 80.92 secs
+ 
+--> 
+
+
+Total memory usage is 188516 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

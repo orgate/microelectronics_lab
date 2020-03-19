@@ -1,0 +1,199 @@
+Release 12.4 par M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+milab36::  Mon Mar 03 04:57:56 2014
+
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+
+
+Constraints file: top.pcf.
+Loading device for application Rf_Device from file '5vlx110t.nph' in environment /opt/ISE_DS/ISE/.
+   "top" is an NCD, version 3.2, device xc5vlx110t, package ff1136, speed -1
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to '2100@10.7.9.36'.
+INFO:Security:56 - Part 'xc5vlx110t' is not a WebPack part.
+WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
+WARNING:Security:44 - No license file was found.
+       Please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses")
+       to assist in obtaining a license.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue
+to function, but you no longer qualify for Xilinx software updates or new releases.
+
+----------------------------------------------------------------------
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.72 2010-11-18".
+
+
+
+Device Utilization Summary:
+
+   Number of BSCANs                          1 out of 4      25%
+   Number of BUFGs                           1 out of 32      3%
+   Number of External IOBs                  16 out of 640     2%
+      Number of LOCed IOBs                  16 out of 16    100%
+
+   Number of Slices                        153 out of 17280   1%
+   Number of Slice Registers               201 out of 69120   1%
+      Number used as Flip Flops            201
+      Number used as Latches                 0
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                    211 out of 69120   1%
+   Number of Slice LUT-Flip Flop pairs     322 out of 69120   1%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please
+   consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.
+Starting initial Timing Analysis.  REAL time: 2 mins 
+Finished initial Timing Analysis.  REAL time: 2 mins 
+
+Starting Router
+
+
+Phase  1  : 1283 unrouted;      REAL time: 2 mins 28 secs 
+
+Phase  2  : 1181 unrouted;      REAL time: 2 mins 30 secs 
+
+Phase  3  : 452 unrouted;      REAL time: 2 mins 38 secs 
+
+Phase  4  : 452 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 29 secs 
+
+Updating file: top.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 32 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 32 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 32 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 32 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 33 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 33 secs 
+Total REAL time to Router completion: 3 mins 34 secs 
+Total CPU time to Router completion: 2 mins 25 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|         CONTROL0<0> | BUFGCTRL_X0Y0| No   |   84 |  0.151     |  1.688      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_7_OBUF |         Local|      |    4 |  0.151     |  0.631      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_5_OBUF |         Local|      |    4 |  0.023     |  0.658      |
++---------------------+--------------+------+------+------------+-------------+
+|     product_13_OBUF |         Local|      |    4 |  0.293     |  0.781      |
++---------------------+--------------+------+------+------------+-------------+
+|     product_12_OBUF |         Local|      |    4 |  0.034     |  0.808      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_9_OBUF |         Local|      |    4 |  0.082     |  0.790      |
++---------------------+--------------+------+------+------------+-------------+
+|dut/Madd_pa_addsub00 |              |      |      |            |             |
+|                 01R |         Local|      |    4 |  0.014     |  0.472      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_6_OBUF |         Local|      |    4 |  0.158     |  0.774      |
++---------------------+--------------+------+------+------------+-------------+
+|icon1/U0/iUPDATE_OUT |              |      |      |            |             |
+|                     |         Local|      |    1 |  0.000     |  0.766      |
++---------------------+--------------+------+------+------------+-------------+
+|          dut/PP1<0> |         Local|      |    4 |  0.329     |  1.082      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_8_OBUF |         Local|      |    4 |  0.150     |  0.625      |
++---------------------+--------------+------+------+------------+-------------+
+|          dut/PP1<1> |         Local|      |    4 |  0.007     |  0.774      |
++---------------------+--------------+------+------+------------+-------------+
+|     product_15_OBUF |         Local|      |    4 |  0.292     |  0.955      |
++---------------------+--------------+------+------+------------+-------------+
+|     product_10_OBUF |         Local|      |    4 |  0.007     |  0.711      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_3_OBUF |         Local|      |    4 |  0.156     |  0.854      |
++---------------------+--------------+------+------+------------+-------------+
+|     product_11_OBUF |         Local|      |    4 |  0.300     |  0.999      |
++---------------------+--------------+------+------+------------+-------------+
+|     product_14_OBUF |         Local|      |    4 |  0.159     |  0.790      |
++---------------------+--------------+------+------+------------+-------------+
+|      product_4_OBUF |         Local|      |    4 |  0.008     |  0.660      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    12.794ns|     2.206ns|       0|           0
+   TO TIMEGRP "J_CLK" 15 ns                 | HOLD        |     1.511ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    14.101ns|     0.899ns|       0|           0
+   TO TIMEGRP "U_CLK" 15 ns                 | HOLD        |     0.569ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_J_CLK = PERIOD TIMEGRP "J_CLK" 30 ns H | SETUP       |    22.088ns|     7.912ns|       0|           0
+  IGH 50%                                   | HOLD        |     0.351ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_J_TO_D_path" TIG                 | MAXDELAY    |         N/A|     7.363ns|     N/A|           0
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_D_TO_J_path" TIG                 | SETUP       |         N/A|     1.126ns|     N/A|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 4 mins 16 secs 
+Total CPU time to PAR completion: 2 mins 55 secs 
+
+Peak Memory Usage:  320 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 0
+Number of info messages: 1
+
+Writing design to file top.ncd
+
+
+
+PAR done!
